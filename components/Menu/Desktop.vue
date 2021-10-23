@@ -1,14 +1,31 @@
 <template>
     <div>
-        <v-app-bar color="#517ef7" height="100px">
-            <v-container fluid class="d-flex flex-row">
-                <v-row>
-                    <v-col cols="12">
-                        <NuxtLink to="">Seu Perfil</NuxtLink>
-                        <NuxtLink to="">Algo aqui</NuxtLink>
-                        <NuxtLink to="">Educação Financeira</NuxtLink>
-                        <NuxtLink to="">Simule o valor</NuxtLink>
-                        <NuxtLink to="">FAQ</NuxtLink>
+        <v-app-bar color="primary" height="100px">
+            <v-container fluid class="d-flex flex-row h-100">
+                <v-row align="center" justify="center">
+                    <v-col cols="12" class="d-flex flex-row justify-center">
+                        <v-img
+                            lazy-src="https://picsum.photos/id/11/10/6"
+                            max-height="50"
+                            max-width="50"
+                            src="/img/logos/logo.svg"
+                        ></v-img>
+
+                        <div class="d-flex align-center">
+                            <NuxtLink
+                                v-for="{ name, href } in links"
+                                :key="name"
+                                :to="href"
+                                class="
+                                    text-decoration-none text-uppercase
+                                    mx-7
+                                    secondary--text
+                                    menu-link
+                                "
+                            >
+                                {{ name }}
+                            </NuxtLink>
+                        </div>
                     </v-col>
                 </v-row>
             </v-container>
@@ -17,8 +34,72 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            links: [
+                {
+                    name: "Seu Perfil",
+                    href: ""
+                },
+                {
+                    name: "Algo aqui",
+                    href: ""
+                },
+                {
+                    name: "Educação Financeira",
+                    href: ""
+                },
+                {
+                    name: "Simule o valor",
+                    href: ""
+                },
+                {
+                    name: "FAQ",
+                    href: ""
+                }
+            ]
+        };
+    }
+};
 </script>
 
-<style>
+<style lang="scss" scoped>
+.menu-link {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    transition: 0.2s ease-in-out;
+    &:hover {
+        color: #8eaeff;
+        &:before {
+            transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: left;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B animation:wave 1s ease-in-out infinite alternate; animation-delay:-0.25s; stroke:%238eaeff; stroke-width:2; stroke-linecap:square; %7D @keyframes wave%7B to%7B d:path('M 0 40 Q 20 42.5 40 40 Q 60 37.5 80 40'); %7D %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 37.5 40 40 Q 60 42.5 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E")
+                0px 50% / 80px 80px repeat-x;
+            animation: waving 3s linear infinite;
+            transform: scaleX(1);
+        }
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        left: 0;
+        bottom: -45px;
+        z-index: -1;
+        transform: scaleX(0);
+        transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1);
+        transform-origin: right;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B stroke:%238eaeff; stroke-width:2; stroke-linecap:square; %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 40 40 40 Q 60 40 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E")
+            0px 50% / 80px 80px repeat-x;
+    }
+}
+
+@keyframes waving {
+    to {
+        background-position: 80px 50%, 160px 50%;
+    }
+}
 </style>

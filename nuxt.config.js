@@ -4,9 +4,9 @@ export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         titleTemplate: "%s - fintech",
-        title: "fintech",
+        title: "Inovathon - Fintech",
         htmlAttrs: {
-            lang: "en"
+            lang: "pt-BR"
         },
         meta: [
             { charset: "utf-8" },
@@ -21,7 +21,7 @@ export default {
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: ["~/assets/vuetify.scss"],
+    css: ["~/assets/vuetify-overwrites.css"],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [],
@@ -42,12 +42,13 @@ export default {
     vuetify: {
         customVariables: ["~/assets/variables.scss"],
         theme: {
-            dark: true,
+            light: true,
+            treeShake: true,
             themes: {
-                dark: {
-                    primary: colors.blue.darken2,
+                light: {
+                    primary: '#1b3475',
                     accent: colors.grey.darken3,
-                    secondary: colors.amber.darken3,
+                    secondary: '#8eaeff',
                     info: colors.teal.lighten1,
                     warning: colors.amber.base,
                     error: colors.deepOrange.accent4,
