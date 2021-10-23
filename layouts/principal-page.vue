@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <Desktop />
+        <v-component :is="menu"></v-component>
         <v-main>
             <v-container>
                 <Nuxt />
@@ -13,10 +13,19 @@
 import Desktop from "@/components/Menu/Desktop";
 import Mobile from "@/components/Menu/Mobile";
 export default {
-    layout: 'PrincipalPage',
+    layout: "PrincipalPage",
     components: {
         Desktop,
         Mobile
+    },
+    computed: {
+        isMobile() {
+            return this.$vuetify.breakpoint.smAndDown;
+        },
+        menu() {
+            if (this.isMobile) return "Mobile";
+            return "Desktop";
+        }
     }
 };
 </script>

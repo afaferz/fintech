@@ -3,7 +3,7 @@
         <v-app-bar color="primary" height="100px">
             <v-container fluid class="d-flex flex-row h-100">
                 <v-row align="center" justify="center">
-                    <v-col cols="12" class="d-flex flex-row justify-center">
+                    <v-col cols="12" class="d-flex flex-row justify-space-around">
                         <v-img
                             lazy-src="https://picsum.photos/id/11/10/6"
                             max-height="50"
