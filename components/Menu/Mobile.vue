@@ -23,6 +23,7 @@
                             close-on-content-click
                             allow-overflow
                             rounded="0"
+                            transition="slide-x-transition"
                         >
                             <template v-slot:activator="{ on, attrs }">
                                 <HamburguerButton :on="on" :attrs="attrs" />

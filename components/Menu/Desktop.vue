@@ -23,14 +23,15 @@
                                 :to="href"
                                 class="
                                     text-decoration-none text-uppercase
-                                    mx-7
+                                    mx-5
                                     secondary--text
                                     menu-link
+                                    body-2
                                 "
                             >
                                 {{ name }}
                             </NuxtLink>
-                            <v-btn rounded color="#8eaeff" to="/login">
+                            <v-btn class="ml-4" rounded color="#8eaeff" to="/login">
                                 <span class="white--text"> LOGIN </span>
                             </v-btn>
                         </div>
@@ -63,7 +64,7 @@ export default {
                     href: ""
                 },
                 {
-                    name: "FAQ",
+                    name: "FAQS",
                     href: ""
                 }
             ]
