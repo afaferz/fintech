@@ -14,12 +14,7 @@
                     rounded="0"
                 >
                     <template v-slot:activator="{ on, attrs }">
-                        <HamburguerButton v-bind="attrs" v-on="on"/>
-                        <!-- <v-btn v-bind="attrs" v-on="on">
-                            <template #default>
-                                OIOI
-                            </template>
-                        </v-btn> -->
+                        <HamburguerButton :on="on" :attrs="attrs" />
                     </template>
 
                     <v-list>
@@ -78,7 +73,7 @@
 </template>
 
 <script>
-import HamburguerButton from '@/components/Custom/HamburguerButton'
+import HamburguerButton from "@/components/Custom/HamburguerButton";
 export default {
     components: {
         HamburguerButton
