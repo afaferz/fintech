@@ -18,9 +18,7 @@
 
                         <div
                             class="d-flex align-center"
-                            v-if="
-                                `${route.path === '/' || $route.path == '/#/*'}`
-                            "
+                            v-if="route.path === '/'"
                         >
                             <a
                                 v-for="{ name, href } in links"
