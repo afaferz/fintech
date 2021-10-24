@@ -117,6 +117,10 @@ export default {
             openLoginModal: false,
             links: [
                 {
+                    name: "Começo",
+                    href: { name: "index" }
+                },
+                {
                     name: "Seu Perfil",
                     href: ""
                 },
