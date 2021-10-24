@@ -6,7 +6,8 @@
                     class="
                         text-h3
                         mx-auto
-                        font-weight-black font-size
+                        font-weight-black
+                        font-size
                         white--text
                     "
                 >
