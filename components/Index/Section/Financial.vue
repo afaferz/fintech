@@ -81,6 +81,7 @@ const ICONS = {
 };
 
 export default {
+    name: "Financial",
     data: () => ({
         interval: null,
         items: [

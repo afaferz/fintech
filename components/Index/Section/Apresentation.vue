@@ -16,6 +16,7 @@
 import CardsIndex from "@/components/Cards/CardsIndex";
 
 export default {
+    name: "Apresentation",
     components: {
         CardsIndex
     }

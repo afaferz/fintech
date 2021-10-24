@@ -9,8 +9,8 @@
         <section title="Financial">
             <Financial />
         </section>
-        <section title="Conditions">
-            <Conditions />
+        <section title="Educational">
+            <Educational />
         </section>
     </div>
 </template>
@@ -18,14 +18,14 @@
 <script>
 import Apresentation from "@/components/Index/Section/Apresentation.vue";
 import WhyInvesting from "@/components/Index/Section/WhyInvesting.vue";
-import Conditions from "@/components/Index/Section/Conditions.vue";
+import Educational from "@/components/Index/Section/Educational.vue";
 import Financial from "@/components/Index/Section/Financial.vue";
 export default {
     layout: "principal-page",
     components: {
         Apresentation,
         WhyInvesting,
-        Conditions,
+        Educational,
         Financial
     }
 };
@@ -65,7 +65,7 @@ section {
             );
         }
     }
-    &[title="Conditions"] {
+    &[title="Educational"] {
         background: linear-gradient(
             -55deg,
             #fefefe 42%,

@@ -40,7 +40,8 @@
                 class="primary lighten-2 py-4 text-center white--text"
                 cols="12"
             >
-                {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+                <strong>Inovathon ::: Fintech Equipe 14</strong> - Todos os direitos
+                reservados &copy; {{ new Date().getFullYear() }}
             </v-col>
         </v-row>
     </v-footer>
@@ -94,7 +95,6 @@ export default {
             {
                 title: "Termos & Privacidade",
                 sublinks: [
-                    { title: "Legal", href: "" },
                     { title: "Legal", href: "" },
                     { title: "Privacidade", href: "" },
                     { title: "Segurança", href: "" }
