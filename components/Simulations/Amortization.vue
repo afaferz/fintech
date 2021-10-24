@@ -9,6 +9,7 @@
                     <p class="pt-4">Calcule a amortização financeira</p>
                     <v-text-field
                         v-model.number="debt"
+                        v-mask="'##.###,##'"
                         outlined
                         prefix="R$"
                         label="Valor da dívida"
