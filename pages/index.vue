@@ -2,6 +2,18 @@
     <div>
         <section title="Apresentation" id="comeco">
             <Apresentation />
+            <transition name="fade">
+                <v-btn
+                    v-show="buttomToBottom"
+                    v-scroll-to="'#seu-perfil'"
+                    class="mx-2 button-continue"
+                    fab
+                    dark
+                    color="primary"
+                >
+                    <v-icon dark> mdi-chevron-down </v-icon>
+                </v-btn>
+            </transition>
         </section>
         <section title="GetSimulates" id="seu-perfil">
             <GetSimulates />
@@ -35,6 +47,29 @@ export default {
         Financial,
         Educational,
         GetSimulates
+    },
+    data() {
+        return {
+            buttomToBottom: true,
+            buttomToTop: false,
+        };
+    },
+    created() {
+        window.addEventListener("scroll", this.handleScroll);
+    },
+    destroyed() {
+        window.removeEventListener("scroll", this.handleScroll);
+    },
+    methods: {
+        handleScroll(event) {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition > 800) {
+                this.buttomToBottom = false;
+            } else {
+                this.buttomToBottom = true;
+            }
+            return this.buttomToBottom;
+        }
     }
 };
 </script>
@@ -49,6 +84,29 @@ section {
         background-position: 0% 0%;
         background-size: auto;
         background-repeat: no-repeat;
+        position: relative;
+        .button-continue {
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-15px);
+            }
+        }
+        @-webkit-keyframes bounce {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-15px);
+            }
+        }
     }
     &[title="WhyInvesting"] {
         background-image: url("/img/patterns/montains-pattern.svg");
@@ -75,5 +133,14 @@ section {
         background-size: auto;
         background-repeat: no-repeat;
     }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>
