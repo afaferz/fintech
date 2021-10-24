@@ -16,7 +16,12 @@
                         >
                         </v-img>
 
-                        <div class="d-flex align-center">
+                        <div
+                            class="d-flex align-center"
+                            v-if="
+                                `${route.path === '/' || $route.path == '/#/*'}`
+                            "
+                        >
                             <a
                                 v-for="{ name, href } in links"
                                 :key="name"
@@ -31,6 +36,32 @@
                             >
                                 {{ name }}
                             </a>
+                            <v-btn
+                                class="ml-4"
+                                rounded
+                                color="#8eaeff"
+                                @click="openLoginModal = true"
+                            >
+                                <span class="white--text">
+                                    JUNTE-SE A NÓS
+                                </span>
+                            </v-btn>
+                        </div>
+                        <div class="d-flex align-center" v-else>
+                            <NuxtLink
+                                v-for="{ name, pathName } in links"
+                                :key="name"
+                                :to="pathName"
+                                class="
+                                    text-decoration-none text-uppercase
+                                    mx-5
+                                    secondary--text
+                                    menu-link
+                                    body-2
+                                "
+                            >
+                                {{ name }}
+                            </NuxtLink>
                             <v-btn
                                 class="ml-4"
                                 rounded
@@ -62,32 +93,28 @@ export default {
             links: [
                 {
                     name: "Começo",
-                    href: "#comeco"
+                    href: "#comeco",
+                    pathName: "/"
                 },
                 {
                     name: "Seu Perfil",
-                    href: "#seu-perfil"
-                },
-                {
-                    name: "Algo aqui",
-                    href: ""
+                    href: "#seu-perfil",
+                    pathName: "/#/seu-perfil"
                 },
                 {
                     name: "Educação Financeira",
-                    href: ""
-                },
-                {
-                    name: "Simule o valor",
-                    href: ""
+                    href: "#financas",
+                    pathName: "/#/financas"
                 },
                 {
                     name: "FAQS",
-                    href: ""
+                    href: "#faqs",
+                    pathName: "/#/faqs"
                 }
             ],
-            easing: 'easeInOutCubic',
+            easing: "easeInOutCubic"
         };
-    },
+    }
 };
 </script>
 
