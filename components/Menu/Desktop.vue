@@ -3,13 +3,18 @@
         <v-app-bar color="primary" height="100px">
             <v-container fluid class="d-flex flex-row h-100">
                 <v-row align="center" justify="center">
-                    <v-col cols="12" class="d-flex flex-row justify-space-around">
+                    <v-col
+                        cols="12"
+                        class="d-flex flex-row justify-space-around"
+                    >
                         <v-img
                             lazy-src="https://picsum.photos/id/11/10/6"
                             max-height="50"
                             max-width="50"
                             src="/img/logos/logo.svg"
-                        ></v-img>
+                            class="logo"
+                        >
+                        </v-img>
 
                         <div class="d-flex align-center">
                             <NuxtLink
@@ -25,6 +30,9 @@
                             >
                                 {{ name }}
                             </NuxtLink>
+                            <v-btn rounded color="#8eaeff" to="/login">
+                                <span class="white--text"> LOGIN </span>
+                            </v-btn>
                         </div>
                     </v-col>
                 </v-row>
@@ -65,6 +73,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.logo {
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: #8eaeff;
+        position: absolute;
+        bottom: 0px;
+    }
+}
 .menu-link {
     display: inline-block;
     position: relative;

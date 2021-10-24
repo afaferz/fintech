@@ -2,9 +2,7 @@
     <v-app>
         <v-component :is="menu"></v-component>
         <v-main>
-            <v-container>
-                <Nuxt />
-            </v-container>
+            <Nuxt />
         </v-main>
     </v-app>
 </template>

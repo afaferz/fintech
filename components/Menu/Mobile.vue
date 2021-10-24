@@ -48,6 +48,16 @@
                                         </NuxtLink>
                                     </v-list-item-title>
                                 </v-list-item>
+                                <v-list-item>
+                                    <v-btn
+                                        rounded
+                                        block
+                                        color="#8eaeff"
+                                        to="/login"
+                                    >
+                                        <span class="white--text"> LOGIN </span>
+                                    </v-btn>
+                                </v-list-item>
                             </v-list>
                         </v-menu>
                     </v-col>
