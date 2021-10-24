@@ -62,7 +62,7 @@ export default {
             {
                 title: "Serviços",
                 sublinks: [
-                    { title: "Controle de finanças", href: "" },
+                    { title: "Controles", href: "" },
                     { title: "Gestão de risco", href: "" },
                     { title: "Estudo de caso", href: "" },
                     { title: "Mentorias individuais", href: "" },
