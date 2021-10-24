@@ -17,10 +17,10 @@
                         </v-img>
 
                         <div class="d-flex align-center">
-                            <NuxtLink
+                            <a
                                 v-for="{ name, href } in links"
                                 :key="name"
-                                :to="href"
+                                v-scroll-to="href"
                                 class="
                                     text-decoration-none text-uppercase
                                     mx-5
@@ -30,7 +30,7 @@
                                 "
                             >
                                 {{ name }}
-                            </NuxtLink>
+                            </a>
                             <v-btn
                                 class="ml-4"
                                 rounded
@@ -62,11 +62,11 @@ export default {
             links: [
                 {
                     name: "Começo",
-                    href: { name: "index" }
+                    href: "#comeco"
                 },
                 {
                     name: "Seu Perfil",
-                    href: ""
+                    href: "#seu-perfil"
                 },
                 {
                     name: "Algo aqui",
@@ -84,9 +84,10 @@ export default {
                     name: "FAQS",
                     href: ""
                 }
-            ]
+            ],
+            easing: 'easeInOutCubic',
         };
-    }
+    },
 };
 </script>
 
@@ -108,8 +109,8 @@ export default {
     position: relative;
     transition: 0.2s ease-in-out;
     z-index: 2;
+    color: #fefefe !important;
     &:hover {
-        color: #fefefe !important;
         &:before {
             animation: waving 3s linear infinite;
             transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -134,33 +135,9 @@ export default {
             0px 50% / 80px 80px repeat-x;
     }
 }
-.nuxt-link-active {
-  color: red !important;
-}
 
 .nuxt-link-exact-active {
-  color: green;
-}
-.menu-link.nuxt-link-exact-active {
-    display: inline-block;
-    position: relative;
-    transition: 0.2s ease-in-out;
-    z-index: 2;
-    color: #fefefe !important;
-    &:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 80px;
-        left: 0;
-        bottom: -45px;
-        z-index: -1;
-        transform: scaleX(0);
-        transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1);
-        transform-origin: right;
-        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B stroke:%238eaeff; stroke-width:2; stroke-linecap:square; %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 40 40 40 Q 60 40 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E")
-            0px 50% / 80px 80px repeat-x;
-    }
+    color: #8eaeff !important;
 }
 
 @keyframes waving {

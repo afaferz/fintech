@@ -1,7 +1,10 @@
 <template>
     <div>
-        <section title="Apresentation">
+        <section title="Apresentation" id="comeco">
             <Apresentation />
+        </section>
+        <section title="GetSimulates" id="seu-perfil">
+            <GetSimulates />
         </section>
         <section title="WhyInvesting">
             <WhyInvesting />
@@ -12,8 +15,8 @@
         <section title="Educational">
             <Educational />
         </section>
-        <section title="GetSimulates">
-            <GetSimulates />
+        <section title="Apresentation">
+            <Apresentation />
         </section>
     </div>
 </template>
