@@ -103,7 +103,6 @@ export default {
     methods: {
         addEvent() {
             let { color, icon } = this.genAlert();
-            console.log(color, icon);
 
             // Gera uma nova cor
             const previousColor = this.items[0].color;
