@@ -1,6 +1,6 @@
 <template>
-    <div :style="{ width: width, height: height }">
-        <v-btn v-on="on" v-bind="attrs">
+    <div class="d-flex align-center">
+        <v-btn v-on="on" v-bind="attrs" plain height="55" v-ripple="false">
             <template #default>
                 <div
                     class="button"
@@ -18,14 +18,6 @@
 <script>
 export default {
     props: {
-        width: {
-            type: String,
-            default: "40px"
-        },
-        height: {
-            type: String,
-            default: "40px"
-        },
         on: {
             required: true
         },
@@ -86,31 +78,14 @@ div.button {
         }
         span.line:nth-of-type(2) {
             transform-origin: top;
-            transform: translate(4px, 0px) rotatez(-45deg);
+            transform: translate(6px, -1px) rotatez(-45deg);
             width: 80%;
         }
         span.line:nth-of-type(3) {
             transform-origin: bottom;
-            transform: translate(16px, -7px) rotatez(45deg);
-            width: 50%;
+            transform: translate(17px, -8px) rotatez(45deg);
+            width: 40%;
         }
     }
 }
-
-// div.button span.line:nth-of-type(1) {
-//     transform-origin: bottom;
-//     transform: rotatez(45deg) translate(8px, -2px);
-// }
-
-// div.button span.line:nth-of-type(2) {
-//     transform-origin: top;
-//     transform: translate(4px, 0px) rotatez(-45deg);
-//     width: 80%;
-// }
-
-// div.button span.line:nth-of-type(3) {
-//     transform-origin: bottom;
-//     width: 50%;
-//     transform: translate(16px, -7px) rotatez(45deg);
-// }
 </style>
