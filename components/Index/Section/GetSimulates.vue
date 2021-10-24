@@ -18,7 +18,12 @@
                     </span>
                     <p>
                         <NuxtLink
-                            to=""
+                            :to="{
+                                name: 'simular-simulation',
+                                params: {
+                                    simulation: 'amortizacao-de-divida',
+                                },
+                            }"
                             class="
                                 white--text
                                 text-decoration-none
