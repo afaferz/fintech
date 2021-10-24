@@ -18,9 +18,6 @@
         <section title="GetSimulates" id="seu-perfil">
             <GetSimulates />
         </section>
-        <section title="WhyInvesting">
-            <WhyInvesting />
-        </section>
         <section title="Financial">
             <Financial />
         </section>
@@ -35,7 +32,6 @@
 
 <script>
 import Apresentation from "@/components/Index/Section/Apresentation.vue";
-import WhyInvesting from "@/components/Index/Section/WhyInvesting.vue";
 import Financial from "@/components/Index/Section/Financial.vue";
 import Educational from "@/components/Index/Section/Educational.vue";
 import GetSimulates from "@/components/Index/Section/GetSimulates.vue";
@@ -43,7 +39,6 @@ export default {
     layout: "principal-page",
     components: {
         Apresentation,
-        WhyInvesting,
         Financial,
         Educational,
         GetSimulates
@@ -51,14 +46,18 @@ export default {
     data() {
         return {
             buttomToBottom: true,
-            buttomToTop: false,
+            buttomToTop: false
         };
     },
     created() {
-        window.addEventListener("scroll", this.handleScroll);
+        if (process.client) {
+            window.addEventListener("scroll", this.handleScroll);
+        }
     },
     destroyed() {
-        window.removeEventListener("scroll", this.handleScroll);
+        if (process.client) {
+            window.removeEventListener("scroll", this.handleScroll);
+        }
     },
     methods: {
         handleScroll(event) {
@@ -107,12 +106,6 @@ section {
                 transform: translateY(-15px);
             }
         }
-    }
-    &[title="WhyInvesting"] {
-        background-image: url("/img/patterns/montains-pattern.svg");
-        background-position: 0% 0%;
-        background-size: cover;
-        background-repeat: no-repeat;
     }
     &[title="Financial"] {
         background: linear-gradient(55deg, #fefefe 60%, $primary 60%);
