@@ -41,16 +41,16 @@
                     >
                         <v-tabs-slider color="primary"></v-tabs-slider>
 
-                        <v-tab
-                            v-for="(item) in items"
-                            :key="item"
-                        >
+                        <v-tab v-for="item in items" :key="item.title">
                             {{ item.title }}
                         </v-tab>
                     </v-tabs>
 
                     <v-tabs-items v-model="tab">
-                        <v-tab-item v-for="item in items" :key="item">
+                        <v-tab-item
+                            v-for="(item, index) in items"
+                            :key="item.title + index"
+                        >
                             <v-card flat rounded="0">
                                 <v-card-text v-text="item.text"></v-card-text>
                             </v-card>

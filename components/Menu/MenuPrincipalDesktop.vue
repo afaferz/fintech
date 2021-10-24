@@ -31,21 +31,32 @@
                             >
                                 {{ name }}
                             </NuxtLink>
-                            <v-btn class="ml-4" rounded color="#8eaeff" to="/login">
-                                <span class="white--text"> LOGIN </span>
+                            <v-btn
+                                class="ml-4"
+                                rounded
+                                color="#8eaeff"
+                                @click="openLoginModal = true"
+                            >
+                                <span class="white--text"> JUNTE-SE A NÓS </span>
                             </v-btn>
                         </div>
                     </v-col>
                 </v-row>
             </v-container>
         </v-app-bar>
+        <ModalLogin v-model="openLoginModal" @close="openLoginModal = false" />
     </div>
 </template>
 
 <script>
+import ModalLogin from "@/components/Login/ModalLogin";
 export default {
+    components: {
+        ModalLogin
+    },
     data() {
         return {
+            openLoginModal: false,
             links: [
                 {
                     name: "Seu Perfil",

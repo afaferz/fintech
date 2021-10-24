@@ -1,14 +1,14 @@
 <template>
-    <v-footer color="white lighten-1" elevation="6" class="pa-0">
-        <v-container>
-            <v-row justify="space-between" align="center" class="mt-4">
+    <v-footer color="white lighten-1" elevation="6" padless>
+        <v-container fluid>
+            <v-row justify="space-around" align="center" class="mt-4 px-0 px-md-14">
                 <v-col
                     v-for="item in links"
                     :key="item.title"
                     cols="12"
                     :md="12 / links.length"
                     align-self="start"
-                    class="mx-4 mx-md-0"
+                    class="px-8 mx-md-0"
                 >
                     <p
                         class="
@@ -34,16 +34,16 @@
                     </p>
                 </v-col>
             </v-row>
+            <v-row justify="center" align="center">
+                <v-col
+                    class="primary lighten-2 py-4 text-center white--text"
+                    cols="12"
+                >
+                    <strong>Inovathon ::: Fintech Equipe 14</strong> - Todos os
+                    direitos reservados &copy; {{ new Date().getFullYear() }}
+                </v-col>
+            </v-row>
         </v-container>
-        <v-row>
-            <v-col
-                class="primary lighten-2 py-4 text-center white--text"
-                cols="12"
-            >
-                <strong>Inovathon ::: Fintech Equipe 14</strong> - Todos os direitos
-                reservados &copy; {{ new Date().getFullYear() }}
-            </v-col>
-        </v-row>
     </v-footer>
 </template>
 <script>

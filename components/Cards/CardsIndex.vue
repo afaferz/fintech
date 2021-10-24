@@ -1,11 +1,18 @@
 <template>
-    <v-card :loading="loading" color="secondary" class="my-12 ma-0" min-height="60vh">
+    <v-card
+        :loading="loading"
+        color="secondary"
+        class="my-12 ma-0"
+        min-height="60vh"
+    >
         <template slot="progress">
             <v-progress-linear color="deep-purple" height="10" indeterminate>
             </v-progress-linear>
         </template>
 
-        <v-card-title class="text-h4 font-style font-weight-bold white--text">
+        <v-card-title
+            class="card-title font-style font-weight-bold white--text"
+        >
             Um novo jeito de pensar sobre suas
             <span class="primary--text"> finanças </span>
         </v-card-title>
@@ -110,5 +117,12 @@ export default {
 .font-style {
     font-family: "Boing-Bold", sans-serif !important;
     line-height: 1.3;
+}
+.card-title {
+    font-size: 2.2em !important;
+    @media screen and (max-width: 600px) {
+        font-size: 2rem !important;
+        letter-spacing: 0.0073529412em !important;
+    }
 }
 </style>
