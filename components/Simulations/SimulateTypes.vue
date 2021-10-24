@@ -87,53 +87,71 @@ export default {
         return {
             whyInvestingInformations: [
                 {
-                    title: "Lorem ipsum 1",
+                    title: "Armortização de dívida",
                     subtitle: "Lorem ipsum dolor set Lorem ipsum",
                     textInformations:
                         "1 - I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape. ",
                     action: {
-                        title: "Simule sua finança",
+                        title: "Simular",
                         func: () => {
-                            console.log("Simule sua finança");
+                            this.$router.push({
+                                name: "simular-simulation",
+                                params: { simulation: "armotizacao-de-divida" }
+                            });
                         }
                     },
                     image: "/img/why-investing/calculator.svg"
                 },
                 {
-                    title: "Lorem ipsum 2",
+                    title: "Consulta de crédito",
                     subtitle: "Lorem ipsum dolor set Lorem ipsum",
                     textInformations:
                         "2 - I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape. ",
                     action: {
-                        title: "Entenda o cálculo",
+                        title: "Simular",
                         func: () => {
-                            console.log("Entenda o cálculo");
+                            this.$router.push({
+                                name: "simular-simulation",
+                                params: {
+                                    simulation: "consulta-de-credito"
+                                }
+                            });
                         }
                     },
                     image: "/img/why-investing/paper-and-pencil.svg"
                 },
                 {
-                    title: "Lorem ipsum 3",
+                    title: "Financiamento Imobiliário",
                     subtitle: "Lorem ipsum dolor set Lorem ipsum",
                     textInformations:
                         "3 - I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape. ",
                     action: {
-                        title: "Consulte seu crédito",
+                        title: "Simular",
                         func: () => {
-                            console.log("Consulte seu crédito");
+                            this.$router.push({
+                                name: "simular-simulation",
+                                params: {
+                                    simulation: "financiamento-imobiliario"
+                                }
+                            });
                         }
                     },
                     image: "/img/why-investing/math-calc.svg"
                 },
                 {
-                    title: "Lorem ipsum 4",
+                    title: "Cálculos de Seguro",
                     subtitle: "Lorem ipsum dolor set Lorem ipsum",
                     textInformations:
                         "4 - I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape. ",
                     action: {
-                        title: "Entenda",
+                        title: "Simular",
                         func: () => {
-                            console.log("Entenda");
+                            this.$router.push({
+                                name: "simular-simulation",
+                                params: {
+                                    simulation: "calculos-de-seguro"
+                                }
+                            });
                         }
                     },
                     image: "/img/why-investing/bubble.svg"
@@ -154,5 +172,8 @@ export default {
 .font-style {
     font-family: "Boing-Bold", sans-serif !important;
     line-height: 1.3;
+}
+.v-card__title {
+    word-break: normal !important;
 }
 </style>
