@@ -54,9 +54,11 @@
                                         rounded
                                         block
                                         color="#8eaeff"
-                                        to="/login"
+                                        @click="openLoginModal = true"
                                     >
-                                        <span class="white--text"> LOGIN </span>
+                                        <span class="white--text">
+                                            JUNTE-SE A NÓS
+                                        </span>
                                     </v-btn>
                                 </v-list-item>
                             </v-list>
@@ -93,18 +95,26 @@
                     </v-col>
                 </v-row> -->
             </v-container>
+            <ModalLogin
+                v-model="openLoginModal"
+                @close="openLoginModal = false"
+            />
         </v-app-bar>
     </div>
 </template>
 
 <script>
-import HamburguerButton from "@/components/Custom/HamburguerButton";
+import HamburguerButton from "@/components/Custom/HamburguerButton.vue";
+import ModalLogin from "@/components/Login/ModalLogin.vue";
+
 export default {
     components: {
-        HamburguerButton
+        HamburguerButton,
+        ModalLogin
     },
     data() {
         return {
+            openLoginModal: false,
             links: [
                 {
                     name: "Seu Perfil",

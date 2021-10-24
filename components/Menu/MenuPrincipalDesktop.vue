@@ -37,7 +37,9 @@
                                 color="#8eaeff"
                                 @click="openLoginModal = true"
                             >
-                                <span class="white--text"> JUNTE-SE A NÓS </span>
+                                <span class="white--text">
+                                    JUNTE-SE A NÓS
+                                </span>
                             </v-btn>
                         </div>
                     </v-col>
