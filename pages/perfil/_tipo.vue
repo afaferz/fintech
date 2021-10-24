@@ -1,13 +1,20 @@
 <template>
-    <h1>{{ typeOfProfile }}</h1>
+    <v-components :is="typeOfProfile"></v-components>
 </template>
 
 <script>
+import Divida from "@/components/Perfil/Divida.vue";
 export default {
-    layout: 'principal-page',
+    layout: "principal-page",
+    components: {
+        Divida
+    },
     computed: {
         typeOfProfile() {
-            return this.$route.params.tipo;
+            switch (this.$route.params.tipo) {
+                case "dividas":
+                    return "Divida";
+            }
         }
     }
 };

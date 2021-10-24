@@ -21,9 +21,6 @@
         <section title="Financial" id="financas">
             <Financial />
         </section>
-        <!-- <section title="Educational">
-            <Educational />
-        </section> -->
         <section title="FAQs" id="faqs">
             <span class="white--text"> FAQs </span>
         </section>
@@ -120,12 +117,7 @@ section {
             background: linear-gradient(0deg, $primary 58%, #fefefe 55%);
         }
     }
-    // &[title="Educational"] {
-    //     background: linear-gradient(-55deg, #fefefe 40%, $primary 30%);
-    //     @media screen and (max-width: 600px) {
-    //         background: linear-gradient(0deg, $primary 58%, #fefefe 55%);
-    //     }
-    // }
+
     &[title="FAQs"] {
         background-color: $primary;
         background-image: url("/img/patterns/leafs.svg");
