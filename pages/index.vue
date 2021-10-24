@@ -6,17 +6,27 @@
         <section title="WhyInvesting">
             <WhyInvesting />
         </section>
+        <section title="Financial">
+            <Financial />
+        </section>
+        <section title="Conditions">
+            <Conditions />
+        </section>
     </div>
 </template>
 
 <script>
 import Apresentation from "@/components/Index/Section/Apresentation.vue";
 import WhyInvesting from "@/components/Index/Section/WhyInvesting.vue";
+import Conditions from "@/components/Index/Section/Conditions.vue";
+import Financial from "@/components/Index/Section/Financial.vue";
 export default {
     layout: "principal-page",
     components: {
         Apresentation,
-        WhyInvesting
+        WhyInvesting,
+        Conditions,
+        Financial
     }
 };
 </script>
@@ -40,7 +50,25 @@ section {
         background-position: 0% 0%;
         background-size: cover;
         background-repeat: no-repeat;
-
+    }
+    &[title="Financial"] {
+        background: linear-gradient(
+            55deg,
+            #fefefe 60%,
+            $primary 60%,
+        );
+    }
+    &[title="Conditions"] {
+        // background: linear-gradient(
+        //     -55deg,
+        //     #fefefe 40%,
+        //     $primary 20%,
+        // );
+        background: linear-gradient(
+            -235deg,
+            #fefefe 60%,
+            $primary 50%,
+        );
     }
 }
 </style>
