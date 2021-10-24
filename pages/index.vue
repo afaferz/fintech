@@ -57,6 +57,13 @@ section {
             #fefefe 60%,
             $primary 60%,
         );
+        @media screen and (max-width: 600px) {
+            background: linear-gradient(
+                0deg,
+                $primary 58%,
+                #fefefe 55%,
+            );
+        }
     }
     &[title="Conditions"] {
         // background: linear-gradient(
@@ -67,7 +74,7 @@ section {
         background: linear-gradient(
             -235deg,
             #fefefe 60%,
-            $primary 50%,
+            $primary 60%,
         );
     }
 }

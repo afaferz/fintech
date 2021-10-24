@@ -49,10 +49,10 @@ export default {
                     primary: '#162b62',
                     accent: colors.grey.darken3,
                     secondary: '#8eaeff',
-                    info: colors.teal.lighten1,
+                    info: colors.lightBlue.accent1,
                     warning: colors.amber.base,
-                    error: colors.deepOrange.accent4,
-                    success: colors.green.accent3
+                    error: colors.deepOrange.darken2,
+                    success: colors.lightGreen.accent3
                 }
             }
         }
