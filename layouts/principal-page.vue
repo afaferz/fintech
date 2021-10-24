@@ -4,25 +4,28 @@
         <v-main>
             <Nuxt />
         </v-main>
+        <PrincipalFooter />
     </v-app>
 </template>
 
 <script>
-import Desktop from "@/components/Menu/Desktop";
-import Mobile from "@/components/Menu/Mobile";
+import MenuPrincipalDesktop from "@/components/Menu/MenuPrincipalDesktop";
+import MenuPrincipalMobile from "@/components/Menu/MenuPrincipalMobile";
+import PrincipalFooter from "@/components/Footer/PrincipalFooter";
 export default {
     layout: "PrincipalPage",
     components: {
-        Desktop,
-        Mobile
+        MenuPrincipalDesktop,
+        MenuPrincipalMobile,
+        PrincipalFooter
     },
     computed: {
         isMobile() {
             return this.$vuetify.breakpoint.smAndDown;
         },
         menu() {
-            if (this.isMobile) return "Mobile";
-            return "Desktop";
+            if (this.isMobile) return "MenuPrincipalMobile";
+            return "MenuPrincipalDesktop";
         }
     }
 };
