@@ -9,27 +9,26 @@
                     <p class="pt-4">Calcule a amortização financeira</p>
                     <v-text-field
                         v-model.number="debt"
-                        prefix="R$"
                         outlined
+                        prefix="R$"
                         label="Valor da dívida"
-                    >
-                    </v-text-field>
+                    />
                     <v-text-field
                         v-model.number="parcels"
                         outlined
                         label="Número de parcelas restantes"
-                    ></v-text-field>
+                    />
                     <v-text-field
                         v-model.number="fees"
                         outlined
                         label="Taxa de juros (%) para desconto"
-                    ></v-text-field>
+                    />
                     <v-text-field
-                        prefix="R$"
                         v-model.number="payment"
                         outlined
+                        prefix="R$"
                         label="Valor de pagamento"
-                    ></v-text-field>
+                    />
                     <v-btn
                         color="deep-purple"
                         x-large
@@ -44,7 +43,9 @@
                     <h2>
                         O valor que você iria pagar caso amortizasse essa
                         quantidade, seria:<br />
-                        <strong>R$ {{ this.newDebt.toFixed(2) }}</strong>
+                        <strong>
+                            <Money v-model="newDebt" v-bind="money" />
+                        </strong>
                     </h2>
                 </v-col>
             </v-row>
@@ -53,20 +54,31 @@
 </template>
 
 <script>
+import { Money, VMoney } from "v-money";
 export default {
     layout: "principal-page",
+    components: {
+        Money
+    },
+    directives: { money: VMoney },
     data() {
         return {
             debt: 0,
             parcels: 0,
             fees: 0,
             payment: 0,
-            newDebt: 0
+            newDebt: 0,
+            money: {
+                decimal: ",",
+                thousands: ".",
+                prefix: "R$ ",
+                precision: 2,
+                masked: false
+            }
         };
     },
     methods: {
         calculateNewDebt() {
-            console.log(this.monthDebt);
             if (this.payment < this.monthDebt) {
                 alert(
                     "O valor de pagamento deve ser maior ou igual ao valor mensal"
@@ -80,7 +92,7 @@ export default {
         }
     },
     computed: {
-        monthDebt: function() {
+        monthDebt() {
             return this.debt / this.parcels;
         }
     }
