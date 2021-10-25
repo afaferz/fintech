@@ -95,8 +95,8 @@ export default {
                         title: "Simular",
                         func: () => {
                             this.$router.push({
-                                name: "simular-simulation",
-                                params: { simulation: "armotizacao-de-divida" }
+                                name: "perfil-tipo",
+                                params: { tipo: "dividas" }
                             });
                         }
                     },

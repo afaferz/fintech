@@ -13,6 +13,7 @@
                             max-width="125"
                             src="/img/logo.jpeg"
                             class="logo"
+                            @click="$router.push({ name: 'index' })"
                         >
                         </v-img>
 

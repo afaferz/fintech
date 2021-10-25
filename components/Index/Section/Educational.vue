@@ -18,7 +18,7 @@
 
                         <span class="secondary--text">O QUE SÃO</span> E
                         <span class="secondary--text">COMO</span>
-                        SAIR?
+                        SAIR
                     </span>
                     <p class="secondary--text mb-0 body-1 text-md-h5">
                         Consumismo exagerado, mau planejamento financeiro ou

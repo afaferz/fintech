@@ -12,6 +12,7 @@
                             max-height="75"
                             max-width="125"
                             src="/img/logo.jpeg"
+                            @click="$router.push({ name: 'index' })"
                         ></v-img>
                         <v-spacer></v-spacer>
                         <v-menu
@@ -29,14 +30,49 @@
                                 <HamburguerButton :on="on" :attrs="attrs" />
                             </template>
 
-                            <v-list>
+                            <v-list v-if="$route.path === '/'">
                                 <v-list-item
                                     v-for="{ name, href } in links"
                                     :key="name"
                                 >
                                     <v-list-item-title>
+                                        <a
+                                            v-scroll-to="href"
+                                            class="
+                                                text-decoration-none
+                                                text-uppercase
+                                                mx-5
+                                                secondary--text
+                                                menu-link
+                                                body-2
+                                            "
+                                        >
+                                            {{ name }}
+                                        </a>
+                                    </v-list-item-title>
+                                </v-list-item>
+                                <v-list-item>
+                                    <v-btn
+                                        rounded
+                                        block
+                                        color="#8eaeff"
+                                        @click="openLoginModal = true"
+                                    >
+                                        <span class="white--text">
+                                            JUNTE-SE A NÓS
+                                        </span>
+                                    </v-btn>
+                                </v-list-item>
+                            </v-list>
+
+                            <v-list v-else>
+                                <v-list-item
+                                    v-for="{ name, pathName } in links"
+                                    :key="name"
+                                >
+                                    <v-list-item-title>
                                         <NuxtLink
-                                            :to="href"
+                                            :to="pathName"
                                             class="
                                                 text-decoration-none
                                                 text-uppercase
@@ -118,27 +154,23 @@ export default {
             links: [
                 {
                     name: "Começo",
-                    href: { name: "index" }
+                    href: "#comeco",
+                    pathName: "/"
                 },
                 {
                     name: "Seu Perfil",
-                    href: ""
-                },
-                {
-                    name: "Algo aqui",
-                    href: ""
+                    href: "#seu-perfil",
+                    pathName: "/#/seu-perfil"
                 },
                 {
                     name: "Educação Financeira",
-                    href: ""
+                    href: "#financas",
+                    pathName: "/#/financas"
                 },
                 {
-                    name: "Simule o valor",
-                    href: ""
-                },
-                {
-                    name: "FAQ",
-                    href: ""
+                    name: "FAQS",
+                    href: "#faqs",
+                    pathName: "/#/faqs"
                 }
             ]
         };

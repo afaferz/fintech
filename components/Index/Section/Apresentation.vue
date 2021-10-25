@@ -1,6 +1,6 @@
 <template>
     <v-container class="special-height">
-        <v-row justify="center" align="center">
+        <v-row justify="center" align="center" class="special-height">
             <v-col cols="12">
                 <p
                     class="
@@ -12,6 +12,10 @@
                 >
                     Um novo jeito de pensar sobre suas
                     <span class="secondary--text"> finanças </span>
+                </p>
+                <v-divider></v-divider>
+                <p class="secondary--text text-h5 text-md-h3 my-5">
+                    Uma relação bancária para o seu desenvolvimento financeiro
                 </p>
             </v-col>
             <v-col cols="12" md="12">
@@ -95,7 +99,7 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/variables.scss";
 .special-height {
-    min-height: 75vh;
+    min-height: 100vh;
 }
 .divida,
 .proposta-investidor,
