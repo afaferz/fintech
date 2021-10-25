@@ -9,16 +9,16 @@
                     >
                         <v-img
                             lazy-src="https://picsum.photos/id/11/10/6"
-                            max-height="50"
-                            max-width="50"
-                            src="/img/logos/logo.svg"
+                            max-height="75"
+                            max-width="125"
+                            src="/img/logo.jpeg"
                         ></v-img>
                         <v-spacer></v-spacer>
                         <v-menu
                             offset-y
                             origin="center center"
                             bottom
-                            nudge-bottom="20%"
+                            nudge-bottom="10%"
                             min-width="100%"
                             close-on-content-click
                             allow-overflow

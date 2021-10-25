@@ -9,9 +9,9 @@
                     >
                         <v-img
                             lazy-src="https://picsum.photos/id/11/10/6"
-                            max-height="50"
-                            max-width="50"
-                            src="/img/logos/logo.svg"
+                            max-height="75"
+                            max-width="125"
+                            src="/img/logo.jpeg"
                             class="logo"
                         >
                         </v-img>
@@ -117,18 +117,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.logo {
-    position: relative;
-    &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 3px;
-        background: #8eaeff;
-        position: absolute;
-        bottom: 0px;
-    }
-}
 .menu-link {
     display: inline-block;
     position: relative;
