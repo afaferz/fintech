@@ -2,7 +2,7 @@
     <v-row justify="center" align="center">
         <v-col cols="12" md="8">
             <v-row class="align-center">
-                <v-col cols="6">
+                <v-col cols="12" md="6">
                     <h2
                         class="
                             font-weight-bold
@@ -37,7 +37,7 @@
                         label="Valor de pagamento"
                     />
                     <v-btn
-                        color="deep-purple"
+                        color="primary"
                         x-large
                         class="white--text pa-4"
                         rounded
@@ -47,7 +47,7 @@
                     </v-btn>
                 </v-col>
                 <v-divider vertical class="my-10 primary"></v-divider>
-                <v-col cols="6" align-self="start">
+                <v-col cols="12" md="6" align-self="start">
                     <h2 class="pt-4 pb-4 secondary--text text-uppercase">
                         O valor que você iria pagar caso amortizasse essa
                         quantidade, seria:

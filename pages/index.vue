@@ -22,7 +22,7 @@
             <Financial />
         </section>
         <section title="FAQs" id="faqs">
-            <span class="white--text"> FAQs </span>
+            <FAQ />
         </section>
     </div>
 </template>
@@ -32,13 +32,15 @@ import Apresentation from "@/components/Index/Section/Apresentation.vue";
 import Financial from "@/components/Index/Section/Financial.vue";
 import Educational from "@/components/Index/Section/Educational.vue";
 import GetSimulates from "@/components/Index/Section/GetSimulates.vue";
+import FAQ from "@/components/Index/Section/FAQ.vue";
 export default {
     layout: "principal-page",
     components: {
         Apresentation,
         Financial,
         Educational,
-        GetSimulates
+        GetSimulates,
+        FAQ
     },
     data() {
         return {
@@ -119,6 +121,8 @@ section {
     }
 
     &[title="FAQs"] {
+        min-height: 50vh;
+        height: auto;
         background-color: $primary;
         background-image: url("/img/patterns/leafs.svg");
         background-position: 0% 0%;
