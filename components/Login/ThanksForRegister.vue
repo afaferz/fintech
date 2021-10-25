@@ -22,7 +22,7 @@
                         <span class="text-uppercase primary--text">futuro financeiro</span>
                     </p>
                     <p class="white--text text-h5">
-                        Nós do <b>Banco Viva Leve</b> estamos
+                        Nós do <b>Banco Vida Leve</b> estamos
                         extremamente felizes em tê-lo(a) conosco
                     </p>
                 </v-card-text>

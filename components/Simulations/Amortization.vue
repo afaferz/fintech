@@ -13,7 +13,7 @@
                     >
                         Calculadora de Amortização
                     </h2>
-                    <p class="pt-4">Calcule a amortização financeira</p>
+                    <p class="pt-4">Calcule o saldo restante com amortização</p>
                     <v-text-field
                         v-model.number="debt"
                         outlined
