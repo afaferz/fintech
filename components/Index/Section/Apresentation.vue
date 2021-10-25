@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="special-height">
         <v-row justify="center" align="center">
             <v-col cols="12">
                 <p
@@ -94,6 +94,9 @@ export default {
 
 <style lang="scss" scoped>
 @import "~/assets/variables.scss";
+.special-height {
+    min-height: 75vh;
+}
 .divida,
 .proposta-investidor,
 .investidor {
