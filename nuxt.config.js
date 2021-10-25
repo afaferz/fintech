@@ -2,7 +2,7 @@ import colors from "vuetify/es5/util/colors";
 
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
-    target: "static",
+    target: 'static',
     head: {
         titleTemplate: "%s - fintech",
         title: "Inovathon - Fintech",
@@ -25,7 +25,10 @@ export default {
     css: ["~/assets/vuetify-overwrites.css"],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: ["@/plugins/vue-scrollto.js", "@/plugins/Filters.js"],
+    plugins: [
+        '@/plugins/vue-scrollto.js',
+        '@/plugins/Filters.js'
+    ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -47,9 +50,9 @@ export default {
             treeShake: true,
             themes: {
                 light: {
-                    primary: "#162b62",
+                    primary: '#162b62',
                     accent: colors.grey.darken3,
-                    secondary: "#8eaeff",
+                    secondary: '#8eaeff',
                     info: colors.lightBlue.accent1,
                     warning: colors.amber.base,
                     error: colors.deepOrange.darken2,
@@ -61,5 +64,5 @@ export default {
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},
-    buildDir: "dist/"
+    buildDir: 'dist/'
 };

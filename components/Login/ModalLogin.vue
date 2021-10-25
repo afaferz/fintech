@@ -328,6 +328,7 @@ export default {
         },
         doSignup() {
             console.log("REGISTRAR");
+            this.$router.push({ name: "register" });
         },
 
         async sendRecoveryPassword() {
