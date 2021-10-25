@@ -22,17 +22,19 @@
                     <v-stepper-items>
                         <v-stepper-content step="1">
                             <v-text-field
+                                v-model="step1.firstName"
                                 :rules="rules.textRules"
                                 label="Primeiro nome"
-                            ></v-text-field>
+                            />
                             <v-text-field
+                                v-model="step1.secondName"
                                 :rules="rules.textRules"
                                 label="Segundo nome"
-                            ></v-text-field>
+                            />
                             <v-btn
                                 color="primary"
                                 @click="e1 = 2"
-                                class="rounded-xl mb-2"
+                                class="rounded-xl my-3"
                             >
                                 Continue
                             </v-btn>
@@ -40,17 +42,20 @@
 
                         <v-stepper-content step="2">
                             <v-text-field
+                                v-model="step2.email"
                                 :rules="rules.emailRules"
                                 label="E-mail"
-                            ></v-text-field>
+                            />
                             <v-text-field
+                                v-model="step2.phone"
                                 :rules="rules.textRules"
+                                v-mask="'(##) # ####-####'"
                                 label="Celular"
-                            ></v-text-field>
+                            />
                             <v-btn
                                 color="#8eaeff"
                                 @click="e1 = 1"
-                                class="rounded-xl mb-2"
+                                class="rounded-xl my-3"
                             >
                                 Voltar
                             </v-btn>
@@ -58,7 +63,7 @@
                             <v-btn
                                 color="primary"
                                 @click="e1 = 3"
-                                class="rounded-xl mb-2 ml-lg-4"
+                                class="rounded-xl my-3 ml-lg-4"
                             >
                                 Continue
                             </v-btn>
@@ -66,37 +71,39 @@
 
                         <v-stepper-content step="3">
                             <v-select
+                                v-model="step3.salary"
                                 :rules="rules.textRules"
                                 :items="salary"
                                 label="Qual sua renda mensal?"
-                            ></v-select>
+                            />
 
                             <v-select
+                                v-model="step3.contractType"
                                 :rules="rules.textRules"
                                 :items="typeContract"
                                 label="Qual seu tipo de contrato?"
-                            ></v-select>
+                            />
 
                             <v-select
+                                v-model="step3.principalSpending"
                                 :rules="rules.textRules"
                                 :items="outlay"
                                 label="Principais gastos"
                                 chips
                                 multiple
-                            ></v-select>
+                            />
 
                             <v-btn
                                 color="#8eaeff"
                                 @click="e1 = 2"
-                                class="rounded-xl mb-2"
+                                class="rounded-xl my-3"
                             >
                                 Voltar
                             </v-btn>
 
                             <v-btn
-                                @click="snackbar = true"
-                                href="/"
-                                class="ml-lg-4 rounded-xl mb-2"
+                                @click="createAccount"
+                                class="ml-lg-4 rounded-xl my-3"
                                 color="primary"
                             >
                                 Criar conta
@@ -116,12 +123,17 @@
         >
             {{ successAccount }}
         </v-snackbar>
+        <ThanksForRegister v-model="openModal" :infos="infos" />
     </v-container>
 </template>
 
 <script>
+import ThanksForRegister from "@/components/Login/ThanksForRegister";
 export default {
     layout: "principal-page",
+    components: {
+        ThanksForRegister
+    },
     data() {
         return {
             e1: 1,
@@ -148,8 +160,47 @@ export default {
                     v => !!v || "E-mail obrigatório",
                     v => /.+@.+/.test(v) || "E-mail inválido"
                 ]
-            }
+            },
+            step1: {
+                firstName: "",
+                secondName: ""
+            },
+            step2: {
+                phone: "",
+                email: ""
+            },
+            step3: {
+                salary: "",
+                contractType: "",
+                principalSpending: []
+            },
+            openModal: false
         };
+    },
+    computed: {
+        infos() {
+            return {
+                step1: {
+                    firstName: "",
+                    secondName: ""
+                },
+                step2: {
+                    phone: "",
+                    email: ""
+                },
+                step3: {
+                    salary: "",
+                    contractType: "",
+                    principalSpending: []
+                }
+            };
+        }
+    },
+    methods: {
+        createAccount() {
+            this.openModal = true;
+            this.snackbar = true;
+        }
     }
 };
 </script>
