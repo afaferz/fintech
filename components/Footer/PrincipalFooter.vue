@@ -6,7 +6,7 @@
                     v-for="item in links"
                     :key="item.title"
                     cols="12"
-                    :md="12 / links.length"
+                    :md="12 % links.length"
                     align-self="start"
                     class="px-8 mx-md-0"
                 >
@@ -62,7 +62,7 @@ export default {
             {
                 title: "Serviços",
                 sublinks: [
-                    { title: "Controles", href: "" },
+                    { title: "Controles Financeiro", href: "" },
                     { title: "Gestão de risco", href: "" },
                     { title: "Estudo de caso", href: "" },
                     { title: "Mentorias individuais", href: "" },
@@ -72,7 +72,7 @@ export default {
             {
                 title: "Aprenda conosco",
                 sublinks: [
-                    { title: "Mentorias", href: "" },
+                    { title: "Orçamento Pessoal", href: "" },
                     { title: "Videos", href: "" },
                     { title: "E-book", href: "" },
                     { title: "Newsletter", href: "" }
@@ -80,13 +80,6 @@ export default {
             },
             {
                 title: "Ajuda & Suporte",
-                sublinks: [
-                    { title: "Fale conosco", href: "" },
-                    { title: "FAQs", href: "" }
-                ]
-            },
-            {
-                title: "Fale Conosco",
                 sublinks: [
                     { title: "Fale conosco", href: "" },
                     { title: "FAQs", href: "" }
