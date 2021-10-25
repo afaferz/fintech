@@ -13,7 +13,7 @@
                             max-width="125"
                             src="/img/logo.jpeg"
                             @click="$router.push({ name: 'index' })"
-                        ></v-img>
+                        />
                         <v-spacer></v-spacer>
                         <v-menu
                             offset-y
