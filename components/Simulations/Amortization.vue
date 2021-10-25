@@ -3,13 +3,19 @@
         <v-col cols="12" md="8">
             <v-row class="align-center">
                 <v-col cols="6">
-                    <h2 class="font-weight-bold pt-4">
+                    <h2
+                        class="
+                            font-weight-bold
+                            pt-4
+                            secondary--text
+                            text-uppercase
+                        "
+                    >
                         Calculadora de Amortização
                     </h2>
                     <p class="pt-4">Calcule a amortização financeira</p>
                     <v-text-field
                         v-model.number="debt"
-                        v-mask="'##.###,##'"
                         outlined
                         prefix="R$"
                         label="Valor da dívida"
@@ -40,12 +46,18 @@
                         CALCULAR
                     </v-btn>
                 </v-col>
-                <v-col>
-                    <h2>
+                <v-divider vertical class="my-10 primary"></v-divider>
+                <v-col cols="6" align-self="start">
+                    <h2 class="pt-4 pb-4 secondary--text text-uppercase">
                         O valor que você iria pagar caso amortizasse essa
-                        quantidade, seria:<br />
+                        quantidade, seria:
+                        <br />
                         <strong>
-                            <Money v-model="newDebt" v-bind="money" />
+                            <Money
+                                v-model="newDebt"
+                                v-bind="money"
+                                class="primary--text"
+                            />
                         </strong>
                     </h2>
                 </v-col>
@@ -88,13 +100,16 @@ export default {
             }
             this.newDebt =
                 this.debt -
-                this.monthDebt -
+                this.monthDebt * this.payInParcels -
                 (this.fees * (this.payment - this.monthDebt)) / 100;
         }
     },
     computed: {
         monthDebt() {
             return this.debt / this.parcels;
+        },
+        payInParcels() {
+            return Math.floor(this.payment / this.monthDebt);
         }
     }
 };
