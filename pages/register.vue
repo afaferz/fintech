@@ -180,23 +180,15 @@ export default {
     computed: {
         infos() {
             return {
-                step1: {
-                    firstName: "",
-                    secondName: ""
-                },
-                step2: {
-                    phone: "",
-                    email: ""
-                },
-                step3: {
-                    salary: "",
-                    contractType: "",
-                    principalSpending: []
-                }
+                completeName: `${this.step1.firstName} ${this.step1.secondName}`,
+                phone: `${this.step2.phone}`
             };
         }
     },
     methods: {
+        nextStep() {
+            this.el++;
+        },
         createAccount() {
             this.openModal = true;
             this.snackbar = true;
